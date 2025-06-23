@@ -1,0 +1,23 @@
+1. docker --version
+
+
+2. docker search ubuntu
+docker search nginx
+
+
+4. docker pull ubuntu
+docker create --name my-ubuntu ubuntu
+docker start my-ubuntu
+
+
+7. docker ps
+
+
+8. docker images
+
+9. docker stop <container-id>
+docker rm <container-id>
+
+
+10. docker rmi nginx
+docker rmi ubuntu
