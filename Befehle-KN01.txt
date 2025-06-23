@@ -5,18 +5,22 @@
 docker search nginx
 
 
-4. docker pull ubuntu
-docker create --name my-ubuntu ubuntu
-docker start my-ubuntu
+4. docker pull nginx
+docker create --name my-nginx -p 8081:80 nginx
+docker start my-nginx
+
+
+5. docker run -d ubuntu
+docker run -it ubuntu
 
 
 7. docker ps
 
 
-8. docker images
+8. docker stop my-nginx
 
-9. docker stop <container-id>
-docker rm <container-id>
+9. docker rm my-nginx
+docker rm my-ubuntu
 
 
 10. docker rmi nginx
