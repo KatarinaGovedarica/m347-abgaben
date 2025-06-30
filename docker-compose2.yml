@@ -1,0 +1,28 @@
+version: "3.9"
+services:
+  web:
+    image: katarinagovedarica/m347:kn02a
+    container_name: m347-kn04b-web
+    ports:
+    - "8086:80"
+    networks:
+      mynet:
+        ipv4_address: 172.15.5.10
+
+  db:
+    image: mariadb:latest
+    container_name: m347-kn04b-db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    networks:
+      mynet:
+        ipv4_address: 172.15.5.11
+
+networks:
+  mynet:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.15.0.0/16
+          ip_range: 172.15.5.0/24
+          gateway: 172.15.5.254
